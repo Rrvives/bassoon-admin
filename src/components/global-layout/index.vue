@@ -1,12 +1,27 @@
 <template>
   <div class="h-full w-full flex">
-    <div class="w-[150px] bg-amber-100 h-full">
+    <div class="w-[200px] bg-amber-100 h-full">
       <GlobalLogo></GlobalLogo>
+      <div v-if="sider">
+        <slot name="sider"></slot>
+      </div>
     </div>
     <div class="w-full">
-      <div class="h-[80px] w-full">头部</div>
-      <div style="height:calc(100vh - 160px) !important;" class="w-full">内容</div>
-      <div class="h-[80px] w-full" >底部</div>
+      <div class="h-[80px] w-full bg-slate-200">
+        <div v-if="header">
+          <slot name="header"></slot>
+        </div>
+      </div>
+      <div style="height:calc(100vh - 160px) !important;" class="w-full">
+        <div v-if="content">
+          <slot name="content"></slot>
+        </div>
+      </div>
+      <div class="h-[80px] w-full bg-slate-400" >
+        <div v-if="footer">
+          <slot name="footer"></slot>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,19 +48,8 @@ const header = computed(() => Boolean(slots.header))
 const tab = computed(() => Boolean(slots.tab))
 const sider = computed(() => Boolean(slots.sider))
 const footer = computed(() => Boolean(slots.footer))
+const content = computed(() => Boolean(slots.content))
 </script>
 <style scoped>
-.n-layout-header,
-.n-layout-footer {
-    background: rgba(128, 128, 128, 0.2);
-    padding: 24px;
-}
 
-.n-layout-sider {
-    background: rgba(128, 128, 128, 0.3);
-}
-
-.n-layout-content {
-    background: rgba(128, 128, 128, 0.4);
-}
 </style>

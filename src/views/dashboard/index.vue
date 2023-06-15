@@ -1,3 +1,3 @@
 <template>
-  底部
+  工作台
 </template>
