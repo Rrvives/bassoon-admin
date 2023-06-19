@@ -1,5 +1,5 @@
 <template>
-  <div>头部</div>
+  <div>header</div>
 </template>
 <script setup>
 </script>

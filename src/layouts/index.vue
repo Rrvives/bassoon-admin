@@ -9,9 +9,9 @@
     <template #content>
       <global-content></global-content>
     </template>
-    <template #footer>
-      <global-footer></global-footer>
-    </template>
+<!--    <template #footer>-->
+<!--      <global-footer></global-footer>-->
+<!--    </template>-->
   </global-layout>
 
 </template>

@@ -1,23 +1,23 @@
 <template>
-  <div class="h-full w-full flex">
-    <div class="w-[200px] bg-amber-100 h-full">
+  <div class="h-full w-full flex global-admin" >
+    <div class="w-[200px]  h-full sider " >
       <GlobalLogo></GlobalLogo>
       <div v-if="sider">
         <slot name="sider"></slot>
       </div>
     </div>
     <div class="w-full">
-      <div class="h-[80px] w-full bg-slate-200">
+      <div class="h-[80px] w-full  header">
         <div v-if="header">
           <slot name="header"></slot>
         </div>
       </div>
-      <div style="height:calc(100vh - 160px) !important;" class="w-full">
-        <div v-if="content">
+      <div :style=" footer ? 'height:calc(100vh - 160px) !important' : 'height:calc(100vh - 80px) !important'" class="w-full p-[16px] pr-0 bg-slate-100 ">
+        <div v-if="content" class="rounded-md bg-white h-full overflow-auto">
           <slot name="content"></slot>
         </div>
       </div>
-      <div class="h-[80px] w-full bg-slate-400" >
+      <div class="h-[80px] w-full bg-slate-400" v-if="footer">
         <div v-if="footer">
           <slot name="footer"></slot>
         </div>
@@ -50,6 +50,10 @@ const sider = computed(() => Boolean(slots.sider))
 const footer = computed(() => Boolean(slots.footer))
 const content = computed(() => Boolean(slots.content))
 </script>
-<style scoped>
-
+<style scoped lang='scss'>
+.global-admin {
+  .header {
+    box-shadow: inset 1px 1px 5px #eee;
+  }
+}
 </style>

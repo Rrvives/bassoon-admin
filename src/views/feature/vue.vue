@@ -1,3 +1,3 @@
 <template>
-  <div>1</div>
+  <div>功能模块</div>
 </template>

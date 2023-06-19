@@ -1,19 +1,21 @@
+import { NIcon, useMessage } from 'naive-ui'
+import { h } from 'vue'
 export const routesToMenu = ( routes: any) => {
+  const renderIcon = (icon: any) => {
+    return () => h(NIcon, null, { default: () => h(icon) })
+  }
   const convertRoutes = (routes:any) => {
     return routes.map( item => {
-      // if(!item.hidden) {
         if(item.hidden){
-          console.log(item, 'item')
           if(item.children) {
             item = item.children[0]
-          } else {
           }
         }
         const label = item.meta.title
         const key = item.redirect || item.path
-        const icon = item.icon
-
+        const icon = renderIcon(item.icon)
         if(item.children && item.children.length > 0) {
+          item.children = item.children.filter( key => !key.hidden)
           return {
             label,
             key,
@@ -25,11 +27,9 @@ export const routesToMenu = ( routes: any) => {
           key,
           icon
         }
-      // }
     })
   }
   const menuOptions = convertRoutes(routes)
-  console.log(routes)
   return {
     menuOptions
   }

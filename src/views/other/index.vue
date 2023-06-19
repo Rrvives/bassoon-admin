@@ -1,3 +1,3 @@
 <template>
-  其他也野蛮
+  <div>其他模块</div>
 </template>
