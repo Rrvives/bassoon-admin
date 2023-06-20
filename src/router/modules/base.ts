@@ -8,7 +8,7 @@ export const routes = [
     meta: {
       title:'工作台',
       icon: 'ApiFilled'
-    },
+    },  
     component: Layouts,
     redirect: '/dashboard',
     children: [
