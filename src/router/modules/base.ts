@@ -10,10 +10,10 @@ export const routes = [
       icon: 'ApiFilled'
     },
     component: Layouts,
-    redirect: '/dashboard/analyze',
+    redirect: '/dashboard',
     children: [
       {
-        path: 'analyze',
+        path: 'dashboard',
         name: 'analyze',
         hidden: false,
         meta: {
