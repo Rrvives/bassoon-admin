@@ -4,23 +4,22 @@ export const routes = [
   {
     path: '/',
     name: 'dashboard',
-    hidden: true,
+    hidden: false,
     meta: {
-      title:'工作台',
+      title:'概览',
       icon: 'ApiFilled'
-    },  
+    },
     component: Layouts,
-    redirect: '/dashboard',
     children: [
       {
-        path: 'dashboard',
-        name: 'analyze',
+        path: 'workbench',
+        name: 'workbench',
         hidden: false,
         meta: {
           title:'工作台',
           icon: 'ApiFilled'
         },
-        component: () => import("@/views/dashboard/index.vue")
+        component: () => import("@/views/overview/dashboard/index.vue")
       },
     ]
   },
@@ -33,7 +32,7 @@ export const routes = [
       icon: 'AccountBookFilled'
     },
     component: Layouts,
-    redirect: '/other/index',
+    // redirect: '/other/index',z
     children: [
       {
         path: 'index',
@@ -57,7 +56,7 @@ export const routes = [
       icon: 'AliwangwangFilled'
     },
     component: Layouts,
-    redirect: '/feature/form',
+    // redirect: '/feature/form',
     children: [
       {
         path: 'form',
@@ -72,12 +71,12 @@ export const routes = [
       {
         path: 'data',
         name: 'data',
-        hidden: true,
+        hidden: false,
         meta: {
           title:'数据',
           icon: 'ApiFilled'
         },
-        component: () => import("@/views/feature/vue.vue")
+        component: () => import("@/views/feature/data.vue")
       }
     ]
   },

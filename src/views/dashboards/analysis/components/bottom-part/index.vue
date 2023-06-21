@@ -1,6 +1,6 @@
 <template>
-  <n-grid :x-gap="16" :y-gap="16" :item-responsive="true" class="flex">
-    <n-grid-item span="0:24 640:24 1024:8" class="w-[50%]">
+  <n-grid :x-gap="16" :y-gap="16" :item-responsive="true">
+    <n-grid-item span="0:24 640:24 1024:8">
       <n-card title="时间线" :bordered="false" class="h-full rounded-16px shadow-sm">
         <n-timeline>
           <n-timeline-item v-for="item in timelines" :key="item.type" v-bind="item" />
@@ -17,7 +17,9 @@
 
 <script setup lang="ts">
 import { h } from 'vue';
-import { NTag, NGrid, NGridItem, NCard, NTimeline, NDataTable, NTimelineItem } from 'naive-ui';
+import { NTag } from 'naive-ui';
+
+// defineOptions({ name: 'DashboardAnalysisBottomPart' });
 
 interface TimelineData {
   type: 'default' | 'info' | 'success' | 'warning' | 'error';

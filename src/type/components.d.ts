@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     GlobalLayout: typeof import('./../components/global-layout/index.vue')['default']
     Index12: typeof import('./../components/global-layout/index12.vue')['default']
+    NaiveProvider: typeof import('./../components/common/naive-provider.vue')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
     NBackTop: typeof import('naive-ui')['NBackTop']
     NBadge: typeof import('naive-ui')['NBadge']

@@ -12,8 +12,8 @@
           <slot name="header"></slot>
         </div>
       </div>
-      <div :style=" footer ? 'height:calc(100vh - 160px) !important' : 'height:calc(100vh - 80px) !important'" class="w-full p-[16px] pr-0 bg-slate-100 ">
-        <div v-if="content" class="rounded-md bg-white h-full overflow-auto">
+      <div :style=" footer ? 'height:calc(100vh - 160px) !important' : 'height:calc(100vh - 80px) !important'" class="w-full p-[16px] pr-0 global-content" >
+        <div v-if="content" class="rounded-md h-full overflow-auto">
           <slot name="content"></slot>
         </div>
       </div>
@@ -54,6 +54,9 @@ const content = computed(() => Boolean(slots.content))
 .global-admin {
   .header {
     box-shadow: inset 1px 1px 5px #eee;
+  }
+  .global-content {
+    background: #F1F5F9;
   }
 }
 </style>

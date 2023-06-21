@@ -7,10 +7,10 @@ export default function unplugin() {
    Components({
      dts: 'src/type/components.d.ts',
      types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
-     // resolvers: [
-     //   NaiveUiResolver(),
-     //   IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFFIX })
-     // ]
+     resolvers: [
+       NaiveUiResolver(),
+       // IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFFIX })
+     ]
    }),
  ]
 }

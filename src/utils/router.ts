@@ -13,7 +13,7 @@ export const routesToMenu = ( routes: any) => {
         }
         const label = item.meta.title
         const key = item.redirect || item.path
-        const icon = renderIcon(item.icon)
+        const icon = item.icon
         if(item.children && item.children.length > 0) {
           item.children = item.children.filter( key => !key.hidden)
           return {

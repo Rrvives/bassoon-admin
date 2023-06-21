@@ -1,10 +1,13 @@
 <template>
- <div ref="gradient" class=" w-full h-[500px]"></div>
+ <n-card  class="w-full h-[550px] mb-[10px]">
+  <div ref="gradient" class=" w-full h-[500px]"></div>
+ </n-card>
 </template>
 
 <script setup lang="ts">
 import * as echarts from 'echarts';
 import { ref, onMounted } from 'vue'
+import { NGrid } from "naive-ui";
 let gradient = ref()
 let option = ref({
  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
